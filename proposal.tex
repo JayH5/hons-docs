@@ -1,0 +1,212 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{lscape}
+
+\graphicspath{ {images/} }
+
+\setlength{\parskip}{\baselineskip}%
+\setlength{\parindent}{0pt}%
+
+\bibliographystyle{plain}
+
+\title{The Impact of Hardware Type and Configuration on Cooperation versus Competition in a Multi-Agent Foraging Task}
+\author{Alexander Borysov, Jamie Hewland and Mary Hsu}
+\date{May 2014}
+
+\begin{document}
+
+\maketitle
+
+\section{Project description}
+Evolutionary Robotics (ER) applies \emph{evolutionary algorithms} (EAs) to the design of robotic agents. Evolutionary algorithms are a set of techniques loosely based on concepts of Darwinian evolution. In an evolutionary algorithm, a set (or \emph{population}) of candidate solutions are iteratively refined. At each iteration (or \emph{generation}) some of the population are selected to be mutated or recombined to form new solutions.
+
+One of the objectives of robotics is building autonomous agents that are able to perform tasks in noisy, unstructured environments. Often it is difficult for a human designer to create a controller by hand with good performance for the agent \cite{Nolfi94}. For this reason, evolutionary algorithms are often applied to develop robotic agents with a desired behaviour.
+
+Another factor that may increase the complexity of designing robotic agents is the deployment of multiple agents that must cooperate to complete a task. Independently evolving multiple agents within a single environment is known as \emph{cooperative coevolution}, wherein agents evolve in response to one another’s actions to eventually create some kind of \emph{emergent} group behaviour.
+
+The foraging task is one of the classical benchmark tasks for multi-agent simulations \cite{Ostergaard01}. In this task, agents are required to seek out resource items scattered around the environment and bring those items back to some designated collection area. There are many variations on this task; some well-known variants include box pushing, where the resource items have to be physically pushed by the bots back to the collection area, and collective construction, where the resource items have to be reconstructed back at the base in a specific order or pattern. The flexibility of the foraging task means that it can be easily modified for our purposes; namely, to require higher levels of cooperation for the agents to achieve acceptable performance.
+
+Much work has been done focusing on cooperative coevolution as a method for producing agents that perform well at this task. Our research will focus primarily on the composition and complexity of such robotic agents.
+
+We will study the minimal sensor configuration needed for cooperation, optimal methods of indirect communication, and whether sensor configurations can be evolved as part of an evolutionary algorithm.
+
+\section{Problem statement}
+Our main research topic is the impact of hardware choice and configuration on the emergence of cooperation in a multi-agent system. Along those lines, we intend to investigate three important aspects of this topic:
+
+\begin{itemize}
+\item Minimal hardware requirements sufficient for the emergence of effective cooperative behaviour
+\item Optimal level of sensor-aided stigmergy for maximising cooperative behaviour
+\item Optimal sensor configuration/morphology for maximising cooperative behaviour
+\end{itemize}
+
+These three aspects will be investigated separately by the three project group members: Alexander Borysov, Mary Hsu, and Jamie Hewland respectively.
+
+\subsection{Minimal Hardware Requirements}
+
+\textbf{ \textit{What is the minimal level of agent complexity, in terms of the required hardware, that is sufficient for the evolutionary emergence of cooperative behaviour?}}
+
+This is an important, yet somewhat overlooked problem in the field of robotics. Multi-agent systems often place a great emphasis on the ability of simple agents to solve complicated tasks via evolved emergent behaviours[panait]. It is thus important to know that worthwhile rewards will be obtained when increasing the complexity of a robotic agent in a cooperative setting; minimising the amount of hardware required has obvious cost-saving benefits, especially when applied to an entire team of such agents, but it is important to know the tradeoffs one makes when reducing costs in this way.
+
+Ordinarily, while it is common for human-written heuristics to be used as controllers for robots in multi-agent systems, it is always done with a hand-designed set of sensors that aid the creation of simple behavioural rules to control the robot\cite{Jones03}. Further reducing the array of hardware sensors available to an agent would presumably result in vastly increased difficulty of designing the agent controller due to the reduction in available information.
+However, when using evolutionary computation, this difficulty is shifted onto the computer, and one is left free to attempt the creation of simpler and simpler robots. The question then becomes: is the process of evolution sufficiently intelligent to be able to work around the limitations of a minimalistic agent design? My research topic thus aims to uncover the tradeoffs made when choosing a small number of sensors, in terms of levels of cooperation, task performance, and evolution time, with the ultimate goal of discovering the minimal viable set of sensors that leads to good emergent team behaviour.
+
+\subsection{Optimal Level of Sensor-Aided Stigmergy}
+
+
+\textbf{ textit {What is the best level of environment sensitivity to induce constructive stigmergy?}}
+
+In a multi-agent system, agents may communicate directly, indirectly, or not at all.\cite{Panait05}. For many tasks, direct communication has proven to be beneficial. However, the cost of direct communication, both in terms of simulation overhead and fitness cost to the agents, has been underemphasised in existing research\cite{Wagner00}.
+
+For the purposes of this research, we will take "indirect communication" to mean awareness of the relative placement of other agents and objects in the environment. We will vary the range of sensory input to the agents and study its effect on emergent self-organising behaviour.
+
+Rajagopalan \textit{et. al.}’s research suggested that, in a predator-prey hunting task consisting of multiple prey agents, direct communication amongst predators was more effective that indirect communication \cite{Rajagopalan11}. However, Yong and Miikkulainen found that, in a predator-prey hunting task consisting of a single prey agent, cooperation was more efficient when using indirect communication than when using direct communication.\cite{Yong09} We may be able to extrapolate the results of their findings into a foraging task where the agents ‘pursue’ only one stationary resource at a time.
+
+Sensors are mechanisms that allow robots to receive feedback from their environment. The usage of sensors in the task setup is one aspect of facilitating indirect communication amongst agents. Thus, we may be able to avoid the overhead of direct communication whilst still producing acceptable results.
+
+
+\subsection{Optimal Sensor Morphology}
+
+\textbf{ \textit{Does evolving both the agent controller and sensor morphology have advantages over evolving the controller alone in a cooperative coevolution task?}}
+
+Ordinarily, the evolutionary algorithm in an evolutionary robotics simulation is used to evolve the controller for the robotic agents. The agent’s sensor configuration (such as the positions of the sensors) remains fixed while the controller is adapted to the task at hand. It is possible to evolve both the controller and the sensor configuration (or morphology) concurrently. This approach may increase the search space of the evolutionary algorithm but also has the potential to find novel sensor configurations that prove advantageous to the given task.
+
+Some work has focused on this question but little research has focused on the application of concurrent controller and sensor configuration evolution to multi-agent simulations. There is significant potential for evolving sensor configurations that give rise to collective behaviour among agents as different types of sensors may be involved when cooperation occurs.
+
+
+\section{Procedures and Methods}
+The common element among each of our experiments is the simulation platform. Each of our algorithms will be tested in this environment. We will try to maintain as much commonality between our test environments as possible.
+
+There are a number of robotics simulation platforms available. One of the most well-documented and maintained libraries is called MASON. It provides a visualization of ongoing simulations as well as basic statistical analysis tools. MASON is Java-based which is an advantage as we are all experienced with the language. We intend to use this platform for our simulations and expect it to be suitable but a thorough assessment of its capabilities has not been performed at this point.
+
+The overall setup consists of forage objects will be randomly scattered at the start of each iteration and the agents will be required to bring the objects back to a predefined target area.
+
+\subsection{Minimal Hardware Requirements}
+The goal of the method I will be using, is to show how task performance, levels of cooperation, and evolution time are affected by increasing agent complexity. To test this, an experimental approach to testing the research question will be taken; an array of experiments will be designed, each testing a different, increasingly more complicated configuration of sensors for an agent. For each such experiment, the agent sensor design is applied to a team of simulated intelligent agents. They are then evolved using Genetic Programming (GP)\cite{Koza90} to solve the foraging task. After the GP algorithm converges to a solution, the run is considered complete. A large number of such runs per experiment will be performed, in order to be able to statistically compare the results of multiple experiments.
+
+In order to test the levels of cooperation exhibited by the agents, each experiment will be performed on two additional variations on the foraging task, for a total of three tasks, each requiring more cooperation than the previous to solve efficiently. This modification can take the form of making some food blocks heavier so that it either flat-out necessitates multiple agents to carry it back to the collection point, or simply takes much longer if done alone.
+This will allow us to see how increasing agent complexity affects task performance when a range of cooperative behaviour is required for a good solution.
+
+The end result of the above method, is a set of task fitness values and convergence times, for each agent configuration, for each task. The box-and-whisker plots of these can then be plotted against each other to clearly indicate the answer to the research question: what is the minimal viable hardware configuration?
+
+\subsection{Optimal Indirect Communication Type}
+
+The aim of this experiment is to find the optimal indirect communication setup that will maximise agent performance in tasks requiring cooperation. I will test the performance of heterogeneous and homogeneous multi-agent systems with the inclusion of different combinations of sensor types and environment configurations.
+
+Infrared sensors detect object distance only. Colour sensors feed into a binary activation function depending on whether or not the colour has been sensed.
+
+The experiment setup consists of a single team of agents whose aim is to collectively maximise the number of objects pushed back to the target region. The task will be set up to require cooperation to succeed by having large blocks that take several agents to push. The genetic composition of the agents will be identical across agents for homogeneous teams, and varied for heterogeneous teams.
+
+The agents are evolved using a Genetic Algorithm (GA) and modified form of Neuroevolution of Augmenting Topologies (NEAT), a well-known GA approach\cite{Stanley02}, until performance converges.
+
+The NEAT algorithm will need to be modified so that the ‘minimal architecture’ includes the sensor types described in the task setup.
+
+The task environment is set up so that the agents are coloured red, the blocks are coloured green and the wall is coloured blue.
+
+The reward structure is kept constant. Different combinations of the above sensors for heterogeneous and homogeneous teams will be tested in tasks that require increasing levels of cooperation
+
+Each test scenario will be executed a number of times. Values that will be tabulated are:
+\begin{itemize}
+\item Best performance value
+\item Mean performance value
+\item Number of iterations required before fitness converges
+\item Average number of iterations required for desired solution
+\item Proportion of runs that result in success
+\end{itemize}
+
+\subsection{Optimal Sensor Morphology}
+
+Two cases must be tested within the shared simulation platform:
+\begin{enumerate}
+\item A system with concurrent evolution of both the agent controller and sensor morphology.
+\item A system with evolution only of the agent controller (this is the control case).
+\end{enumerate}
+
+The performance and number of iterations required before termination of each approach will be compared. By comparing these two cases, I hope to show that the addition of the evolution of the sensor configuration produces better results.
+
+The NEAT evolutionary algorithm will be used to evolve the agent controllers.\cite{Stanley02} This system is popular, has been shown to perform well, and has a number of libraries available for implementation.
+
+There is a lack of formalized methods for evolving robot sensor morphology so a system will need to be developed. This system will be based on existing methods used in some of the research referenced and will be restricted in complexity due to the time constraints of the project.
+
+Tests for the second case will feature an existing, well-known robotics platform. A good candidate for this is the Khepera robot which has been used in many experiments over the years.
+
+\section{Ethical, Professional and Legal Issues}
+
+Our testing platform for the multi-agent systems will be a computer simulation, and as such, we do not anticipate encountering any ethical or legal issues with either our testing methods or platforms as no human test subjects will be involved.
+
+There are several software artefacts that may result from this project, for which UCT holds copyright as stipulated in Section 8.1 of the 2011 Revision of UCT’s IP policy\cite{UCTIP}.
+
+If our research is published, it will, by Section 9.2 of UCT’s IP policy, fall under a Creative Commons licence\cite{UCTIP}.
+
+
+\section{Related Work}
+
+\subsection{Minimal Hardware Requirements}
+Most existing literature, when deciding on an agent configuration to use for a particular task, doesn’t really tackle the question of hardware-related agent complexity. Papers usually present a single agent setup that is then used for all subsequent experiments performed\cite{Waibel09, Sims94}. One can only assume the researchers have performed some ad-hoc tests beforehand to determine a reasonable number and configuration of sensors.
+
+My research will thus fill this overlooked gap in literature by making the hardware-related choices more explicit with relation to their effect on the agents’, and evolutionary algorithms’ performance.
+
+\subsection{Optimal Indirect Communication Type}
+There has been extensive literature on pitting direct versus indirect communication in differing tasks. Rajagopalan \textit{et. al.}. tested predators hunting multiple prey with and without direct communication in the form of message-passing. \cite{Rajagopalan11}
+
+There has also been research into the related fields of stigmergic coordination between agents. Mataric \textit{et. al.}. encoded explicit cooperative control sequences in robots who are able to see each others’ presences. \cite{Werger99}
+
+However, little research has been done in the area of varying levels of a specific type of indirect communication embodied as hardware modules (\textit{ie.} sensors).
+
+
+\subsection{Optimal Sensor Morphology}
+There are several examples of attempts by researchers to evolve robot sensor configurations as well as controllers. Some of the early attempts are: \cite{Sims94,Balakrishnan96,Lee:1996}. These attempts have either been very abstract \cite{Balakrishnan96}, or featured only one or two robots \cite{Sims94}.
+
+More recently, Buason and Ziemke have studied the evolution of robotic sensors in depth \cite{Buason:2003, Buason:2005}. All of their experiments, however, have focused on the predator-prey task or some form of competitive coevolution and not cooperative coevolution. Bongard has also studied robot morphology evolution as a means to account for more complex tasks \cite{Bongard:2009,Bongard:2010} but again his experiments did not involve cooperative coevolution or the foraging task.
+
+The existing work sets out some examples of how to go about sensor morphology evolution
+
+\section{Anticipated Outcomes}
+Our project as a whole has the unifying theme of cooperation versus competition in multi-agent foraging tasks. As such, we will be able to share a testing platform -- the computer simulation of the multi-agent system. This will be a common outcome to the three research aspects, even if it is somewhat secondary to the actual research outcomes.
+
+\subsection{Minimal Hardware Requirements}
+The major result from the research in the hardware minimisation topic would be the results table mapping agent complexities to task performances and evolution times for a range of three foraging tasks. While only one of these values will technically be selected as the ‘answer’ to the research question, other researchers may find it useful to peruse the entire set of results, and choose an agent configuration that suits their particular use case.
+I thus expect these results to more reliably inform other researchers as to what the viable agent designs are that work in cooperative scenarios, information that is lacking in coherent form, in current literature.
+
+An incidental artefact that will result from this research is a GP implementation of agent controller evolution in a cooperative setting. But, it is of course only the means to an end -- the main research results.
+
+This particular research question has no clear success or failure criteria; if it is able to provide the results table, it has succeeded. The usefulness of this data is the part that may or may not materialise.
+
+\subsection{Optimal Indirect Communication Type}
+The major outcomes for this experiment are expected to be the combination of sensor types that maximise cooperative performance, as well as a table of results of the cooperative fitness of the agents. The best combination of sensors in this task environment may then be used in the other two research areas as a controlled variable. The table of results could be used to decide on which sensors to use should the optimal choice not be available.
+
+A key success factor for this part of the research is that the agents succeed satisfactorily at the foraging task, enough for the experiment to determine the best combinations. Failure will disprove the assumption on which this research is based - that cooperative behaviour will, in fact, arise in the task environment as it is designed.
+
+The research will have succeeded when the aims of finding the best mix of sensors to be included have been reached.
+
+\subsection{Optimal Sensor Morphology}
+Ideally, the addition of sensor morphology adaptation is beneficial. If this is the case then two points can be argued:
+\begin{enumerate}
+\item An evolved sensor morphology and controller combination has been found for the collective foraging task that performs better than an existing sensor configuration paired with an evolved controller.
+\item Sensor morphology should be evolved together with agent controllers in a cooperative coevolution task in order to achieve the best performance.
+\end{enumerate}
+
+In addition to these two points, I aim to create a framework for evolving sensor morphology that avoids the issues of runaway complexity while giving rise to cooperative behaviour among agents.
+
+\section{Project Plan}
+
+\subsection{Risks}
+We don’t rely on any external resources for the success of our project; however, some of the research questions involve very long algorithm running times before results can be obtained. This is a risk, because it is very difficult to estimate the running time of the algorithms outlined above; in fact, the running times are part of the measured variables for some of the research questions, meaning they are inherently unpredictable. We intend to minimise this risk by completing all the modules that testing is dependent on within the earliest possible timeframes (\textit{See Addendum A}).
+
+A second risk, related to the first, is uncertain software development time. The long running times of our algorithms necessitate a fairly early schedule relative to the Honours deadline dates; this exacerbates the risk of uncertain development times for the software artefacts such as the respective evolutionary algorithms. The MASON simulation platform may not completely fulfill our requirements, as we are require custom robot representation. If MASON does not meet our requirements, software development time will be significantly increased. In that case, we will need to develop our own platform in addition to some of the necessary algorithms needed.
+
+The risk relating to each team member not having a viable project is minimal, as a) We are each using different Evolutionary Algorithms to adapt our agents and b) We are each testing related but independent hypothesis related to the problem domain.
+
+\bibliography{proposal}
+
+\begin{landscape}
+\appendix
+\section{Addendum A: Gantt Chart And Task List}
+\centering
+\includegraphics[scale=0.3]{ganttchart}
+\end{landscape}
+
+\end{document}
+
+
+

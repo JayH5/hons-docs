@@ -27,7 +27,7 @@ Another factor that may increase the complexity of designing robotic agents is t
 
 The foraging task is one of the classical benchmark tasks for multi-agent simulations \cite{Ostergaard01}. In this task, agents are required to seek out resource items scattered around the environment and bring those items back to some designated collection area. There are many variations on this task; some well-known variants include box pushing, where the resource items have to be physically pushed by the bots back to the collection area, and collective construction, where the resource items have to be reconstructed back at the base in a specific order or pattern. The flexibility of the foraging task means that it can be easily modified for our purposes; namely, to require higher levels of cooperation for the agents to achieve acceptable performance.
 
-Much work has been done focusing on cooperative coevolution as a method for producing agents that perform well at this task. Our research will focus primarily on the composition and complexity of such robotic agents.
+Much work has been done focusing on cooperative coevolution as a method for producing agents that perform well at this task. However, we will study variable sensor-actuator configurations (morphology) of individual robots, since the impact of morphology on emergent cooperative group behaviour has received less research attention.
 
 We will study the minimal sensor configuration needed for cooperation, optimal methods of indirect communication, and whether sensor configurations can be evolved as part of an evolutionary algorithm.
 
@@ -118,17 +118,17 @@ Each test scenario will be executed a number of times. Values that will be tabul
 
 Two cases must be tested within the shared simulation platform:
 \begin{enumerate}
-\item A system with concurrent evolution of both the agent controller and sensor morphology.
-\item A system with evolution only of the agent controller (this is the control case).
+\item A system with co-evolution of both the agent controller and sensor morphology concurrently.
+\item A system with co-evolution of only the agent controller (this is the control case).
 \end{enumerate}
 
-The performance and number of iterations required before termination of each approach will be compared. By comparing these two cases, I hope to show that the addition of the evolution of the sensor configuration produces better results.
+The performance and number of iterations required before termination of each approach will be compared. The experimental goal is to show, by comparing these two systems, that the addition of the evolution of the sensor configuration produces better results.
 
 The NEAT evolutionary algorithm will be used to evolve the agent controllers.\cite{Stanley02} This system is popular, has been shown to perform well, and has a number of libraries available for implementation.
 
 There is a lack of formalized methods for evolving robot sensor morphology so a system will need to be developed. This system will be based on existing methods used in some of the research referenced and will be restricted in complexity due to the time constraints of the project.
 
-Tests for the second case will feature an existing, well-known robotics platform. A good candidate for this is the Khepera robot which has been used in many experiments over the years.
+Tests for the second case will feature an existing, well-known robotics platform. A good candidate for this is the Khepera robot which has been used in many experiments over the years. There are several Khepera simulators and these can be studied to implement simulated Khepera robots in MASON.
 
 \section{Ethical, Professional and Legal Issues}
 
@@ -158,8 +158,6 @@ However, little research has been done in the area of varying levels of a specif
 There are several examples of attempts by researchers to evolve robot sensor configurations as well as controllers. Some of the early attempts are: \cite{Sims94,Balakrishnan96,Lee:1996}. These attempts have either been very abstract \cite{Balakrishnan96}, or featured only one or two robots \cite{Sims94}.
 
 More recently, Buason and Ziemke have studied the evolution of robotic sensors in depth \cite{Buason:2003, Buason:2005}. All of their experiments, however, have focused on the predator-prey task or some form of competitive coevolution and not cooperative coevolution. Bongard has also studied robot morphology evolution as a means to account for more complex tasks \cite{Bongard:2009,Bongard:2010} but again his experiments did not involve cooperative coevolution or the foraging task.
-
-The existing work sets out some examples of how to go about sensor morphology evolution
 
 \section{Anticipated Outcomes}
 Our project as a whole has the unifying theme of cooperation versus competition in multi-agent foraging tasks. As such, we will be able to share a testing platform -- the computer simulation of the multi-agent system. This will be a common outcome to the three research aspects, even if it is somewhat secondary to the actual research outcomes.
@@ -207,6 +205,3 @@ The risk relating to each team member not having a viable project is minimal, as
 \end{landscape}
 
 \end{document}
-
-
-

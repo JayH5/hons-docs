@@ -1,19 +1,19 @@
 ##1. Project Description
 
-  “Much work has been done focusing on cooperative coevolution as a method
+  ~~“Much work has been done focusing on cooperative coevolution as a method
   for producing agents that perform well at this task. Our research will
-  focus primarily on the composition and complexity of such robotic agents.”
+  focus primarily on the composition and complexity of such robotic agents.”~~
 
-  Replace “Our research will focus primarily on the composition and
+  ~~Replace “Our research will focus primarily on the composition and
   complexity of such robotic agents.” – and the final paragraph with
-  something like:
+  something like:~~
 
-  “However, we will study variable sensor-actuator configurations
+  ~~“However, we will study variable sensor-actuator configurations
   (morphology) of individual robots, since the impact of morphology on
   emergent cooperative versus competitive group behaviour has received less
-  research attention.”
+  research attention.”~~
 
-  The rest of the project description is fine.
+  ~~The rest of the project description is fine.~~
 
 ##2. Problem Statement
 Replace all mention of “hardware” with the term “morphology” – the former
@@ -143,14 +143,14 @@ sensor sensitivity (if this is what is intended) will be implemented.
 
 ###3.3
 
-Replace concurrent evolution with co-evolution of robot controller and
-morphology.
+~~Replace concurrent evolution with co-evolution of robot controller and
+morphology.~~
 
-“I hope to show” -> “The experimental goal is to show…” (or something
-similar)
+~~“I hope to show” -> “The experimental goal is to show…” (or something
+similar)~~
 
- Also, note that MASON does not include any implementation of Khepera
-robots – so that would have to be implemented.
+~~Also, note that MASON does not include any implementation of Khepera
+robots – so that would have to be implemented.~~
 
 ##5. Related Work
 
@@ -163,10 +163,10 @@ case of 5.2 – approaches that test different sensor types in a multi-agent
 (cooperative behaviour) context – since the related work is no longer
 about indirect (stigmergic) communication, right?
 
-“The existing work sets out some examples of how to go about sensor
-morphology evolution”
+~~“The existing work sets out some examples of how to go about sensor
+morphology evolution”~~
 
-Did this sentence get lost and is looking for a home?
+~~Did this sentence get lost and is looking for a home?~~
 
 ##6. Anticipated Outcomes
 

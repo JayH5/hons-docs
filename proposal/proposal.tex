@@ -36,7 +36,7 @@ We will study the minimal sensor configuration needed for cooperation, optimal m
 Our main research topic is the impact of agent morphology on the emergence of cooperation in a multi-agent system. Specifically, we intend to investigate three research questions:
 
 \begin{enumerate}
-\item Minimal hardware requirements sufficient for the emergence of effective cooperative behaviour
+\item Minimal morphology requirements sufficient for the evolutionary emergence of effective cooperative behaviour given the constraints of the morphology
 \item Optimal level of sensor-aided stigmergy for maximising cooperative behaviour
 \item Whether the addition of sensor configuration evolution results in cooperative behaviour that achieves the highest group task performance
 \end{enumerate}
@@ -45,12 +45,12 @@ These three aspects will be investigated separately by the three project group m
 
 \subsection{Minimal Hardware Requirements}
 
-\textbf{ \textit{What is the minimal level of agent complexity, in terms of the required hardware, that is sufficient for the evolutionary emergence of cooperative behaviour?}}
+\textbf{ \textit{What is the minimal level of morphological agent complexity that is sufficient for the evolutionary emergence of cooperative behaviour within the given morphological constraints?}}
 
-This is an important, yet somewhat overlooked problem in the field of robotics. Multi-agent systems often place a great emphasis on the ability of simple agents to solve complicated tasks via evolved emergent behaviours[panait]. It is thus important to know that worthwhile rewards will be obtained when increasing the complexity of a robotic agent in a cooperative setting; minimising the amount of hardware required has obvious cost-saving benefits, especially when applied to an entire team of such agents, but it is important to know the tradeoffs one makes when reducing costs in this way.
+This is an important, yet somewhat overlooked problem in the field of robotics. Multi-agent systems often place a great emphasis on the ability of simple agents to solve complicated tasks via evolved emergent behaviours~\cite{panait}. It is thus important to know that worthwhile rewards will be obtained when increasing the complexity of a robotic agent in a cooperative setting; minimising the amount of hardware required has obvious cost-saving benefits, especially when applied to an entire team of such agents, but it is important to know the tradeoffs one makes when reducing costs in this way.
 
-Ordinarily, while it is common for human-written heuristics to be used as controllers for robots in multi-agent systems, it is always done with a hand-designed set of sensors that aid the creation of simple behavioural rules to control the robot\cite{Jones03}. Further reducing the array of hardware sensors available to an agent would presumably result in vastly increased difficulty of designing the agent controller due to the reduction in available information.
-However, when using evolutionary computation, this difficulty is shifted onto the computer, and one is left free to attempt the creation of simpler and simpler robots. The question then becomes: is the process of evolution sufficiently intelligent to be able to work around the limitations of a minimalistic agent design? My research topic thus aims to uncover the tradeoffs made when choosing a small number of sensors, in terms of levels of cooperation, task performance, and evolution time, with the ultimate goal of discovering the minimal viable set of sensors that leads to good emergent team behaviour.
+Ordinarily, while it is common for human-written heuristics to be used as controllers for robots in multi-agent systems, it is always done with a hand-designed set of sensors that aid the creation of simple behavioural rules to control the robot~\cite{Jones03}. Further reducing the array of hardware sensors available to an agent would presumably result in vastly increased difficulty of designing the agent controller due to the reduction in available information.
+However, when using evolutionary computation, this difficulty is shifted onto the computer, and one is left free to attempt the creation of simpler and simpler robots. The question then becomes: is artificial evolution an effective process for adapting controller design within the constraints of a minimalistic agent morphology? The first research topic thus aims to uncover the tradeoffs made when choosing a minimalistic morphology, in terms of levels of cooperation, task performance, and evolution time, with the ultimate goal of discovering the minimal viable set of sensors and actuators that leads to good emergent team behaviour.
 
 \subsection{Optimal Level of Sensor-Aided Stigmergy}
 
@@ -83,12 +83,12 @@ There are a number of robotics simulation platforms available. One of the most w
 The overall setup consists of forage objects will be randomly scattered at the start of each iteration and the agents will be required to bring the objects back to a predefined target area.
 
 \subsection{Minimal Hardware Requirements}
-The goal of the method I will be using, is to show how task performance, levels of cooperation, and evolution time are affected by increasing agent complexity. To test this, an experimental approach to testing the research question will be taken; an array of experiments will be designed, each testing a different, increasingly more complicated configuration of sensors for an agent. For each such experiment, the agent sensor design is applied to a team of simulated intelligent agents. They are then evolved using Genetic Programming (GP)\cite{Koza90} to solve the foraging task. After the GP algorithm converges to a solution, the run is considered complete. A large number of such runs per experiment will be performed, in order to be able to statistically compare the results of multiple experiments.
+The goal of the first research question's method, is to show how task performance, levels of cooperation, and evolution time are affected by increasing agent complexity. To test this, an experimental approach to testing the research question will be taken; an array of experiments will be designed, each testing a different, increasingly more complicated configuration of sensors for an agent. For each such experiment, the agent sensor design is applied to a team of simulated intelligent agents. They are then evolved using Genetic Programming (GP)\cite{Koza90} to solve the foraging task. After the GP algorithm converges to a solution, the run is considered complete. A large number of such runs per experiment will be performed, in order to be able to statistically compare the results of multiple experiments.
 
 In order to test the levels of cooperation exhibited by the agents, each experiment will be performed on two additional variations on the foraging task, for a total of three tasks, each requiring more cooperation than the previous to solve efficiently. This modification can take the form of making some food blocks heavier so that it either flat-out necessitates multiple agents to carry it back to the collection point, or simply takes much longer if done alone.
 This will allow us to see how increasing agent complexity affects task performance when a range of cooperative behaviour is required for a good solution.
 
-The end result of the above method, is a set of task fitness values and convergence times, for each agent configuration, for each task. The box-and-whisker plots of these can then be plotted against each other to clearly indicate the answer to the research question: what is the minimal viable hardware configuration?
+The end result of the above method, is a set of task fitness values and convergence times (how quickly the system reached a predetermined low standard deviation), for each agent configuration, for each task. These results can then be analysed to find the optimal point where the tradeoff between morphological complexity and task performance is most favourable.
 
 \subsection{Optimal Indirect Communication Type}
 
@@ -143,7 +143,9 @@ If our research is published, it will, by Section 9.2 of UCT’s IP policy, fall
 \section{Related Work}
 
 \subsection{Minimal Hardware Requirements}
-Most existing literature, when deciding on an agent configuration to use for a particular task, doesn’t really tackle the question of hardware-related agent complexity. Papers usually present a single agent setup that is then used for all subsequent experiments performed\cite{Waibel09, Sims94}. One can only assume the researchers have performed some ad-hoc tests beforehand to determine a reasonable number and configuration of sensors.
+GP is a widely used approach to evolving controllers for multi-agent systems. It has been shown to be effective in solving complex tasks, with the caveat of possibly lengthy evaluation times depeding on the chosen underlying set of symbols~\cite{gpchallenges,stgp}. It has thus been shown to be a reasonable choice for evolving simulated agents.
+
+Most existing literature exploring evolutionary robotics, when deciding on an agent configuration to use for a particular task, doesn’t really tackle the question of hardware-related agent complexity. Papers usually present a single agent setup that is then used for all subsequent experiments performed\cite{Waibel09, Sims94}. One can only assume the researchers have performed some ad-hoc tests beforehand to determine a reasonable number and configuration of sensors.
 
 My research will thus fill this overlooked gap in literature by making the hardware-related choices more explicit with relation to their effect on the agents’, and evolutionary algorithms’ performance.
 
@@ -169,7 +171,9 @@ I thus expect these results to more reliably inform other researchers as to what
 
 An incidental artefact that will result from this research is a GP implementation of agent controller evolution in a cooperative setting. But, it is of course only the means to an end -- the main research results.
 
-This particular research question has no clear success or failure criteria; if it is able to provide the results table, it has succeeded. The usefulness of this data is the part that may or may not materialise.
+There is the additional possibility of comparing the results obtained using the manual tests employed by this research question, with the third research question, where morphologies themselves are evolved. It will be of interest to see if artificial evolution is able to reach the efficiency of the optimal solution found in the results here.
+
+This research question has succeeded if an optimal morphology is found that is ahead by a significant margin; on the other hand, it has failed if the task performance scales more or less linearly with morphological agent complexity, thus giving no useful answer to the research question.
 
 \subsection{Optimal Indirect Communication Type}
 The major outcomes for this experiment are expected to be the combination of sensor types that maximise cooperative performance, as well as a table of results of the cooperative fitness of the agents. The best combination of sensors in this task environment may then be used in the other two research areas as a controlled variable. The table of results could be used to decide on which sensors to use should the optimal choice not be available.

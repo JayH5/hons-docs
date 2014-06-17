@@ -189,7 +189,7 @@ These anticipated outcomes have changed – right?
 
 ###6.3
 
-Same comment as for 6.1.
+~~Same comment as for 6.1.~~
 
 ## Addendum
 Gantt chart is difficult to read…

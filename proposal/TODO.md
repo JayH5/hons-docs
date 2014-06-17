@@ -29,12 +29,12 @@ This needs to be reworded to emphasize that the emergent cooperation is
 necessary for solving a foraging task, and that the multi-agent system is
 a simulated multi-robot system.
 
-“Along those lines, we intend to investigate three important aspects of
-this topic:”
+~~“Along those lines, we intend to investigate three important aspects of
+this topic:”~~
 
-Should be rephrased to something like: “Specifically, we intend to
+~~Should be rephrased to something like: “Specifically, we intend to
 investigate three research questions” – the three should then be
-enumerated 1, 2, and 3.
+enumerated 1, 2, and 3.~~
 
 “Minimal hardware requirements sufficient for the emergence of effective
 cooperative behaviour”
@@ -53,13 +53,13 @@ state what is meant by this and the relation to controller evolution
 versus morphology – i.e. – is it fixed, but hand crafted – with variable
 sensor resolutions/sensitivity, like in the first objective?
 
-“Optimal sensor configuration/morphology for maximising cooperative
-behaviour”
+~~“Optimal sensor configuration/morphology for maximising cooperative
+behaviour”~~
 
-“sensor configuration” can be used instead of morphology” – instead of
+~~“sensor configuration” can be used instead of morphology” – instead of
 “maximising cooperative behaviour” – rephrase this to say something like
 “evolving cooperative behaviour that achieves the highest group task
-performance.”
+performance.”~~
 
 ###2.1 Minimal Hardware Requirements
 
@@ -94,28 +94,28 @@ significantly – right?
 
 ###2.3 Optimal Sensor Morphology
 
-“Does evolving both the agent controller and sensor morphology have
+~~“Does evolving both the agent controller and sensor morphology have
 advantages over evolving the controller alone in a cooperative coevolution
-task?”
+task?”~~
 
-It is not a cooperative co-evolution task, but rather a task that requires
-cooperative behaviour, or at least benefits from cooperative behaviour.
+~~It is not a cooperative co-evolution task, but rather a task that requires
+cooperative behaviour, or at least benefits from cooperative behaviour.~~
 
-“Ordinarily, the evolutionary algorithm in an evolutionary robotics
+~~“Ordinarily, the evolutionary algorithm in an evolutionary robotics
 simulation is used to evolve the controller for the robotic agents. The
-agents sensor configuration (such as the…”
+agents sensor configuration (such as the…”~~
 
-Rephrase this paragraph to make it clear that morphology is both sensor
+~~Rephrase this paragraph to make it clear that morphology is both sensor
 and actuator configuration (however, practically you’ll need some minimal
-actuator setup, otherwise the robots wont be able to move).
+actuator setup, otherwise the robots wont be able to move).~~
 
-“Some work has focused on this question but little research has focused on
+~~“Some work has focused on this question but little research has focused on
 the application of concurrent controller and sensor configuration
-evolution to multi-agent simulations.”
+evolution to multi-agent simulations.”~~
 
-Clarify this to say controller and morphology co-evolution with respect to
+~~Clarify this to say controller and morphology co-evolution with respect to
 tasks that require cooperative behaviour, or benefit from cooperative
-behaviour.
+behaviour.~~
 
 ##3. Procedures and Methods
 

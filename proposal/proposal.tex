@@ -33,13 +33,13 @@ Much work has been done focusing on cooperative coevolution as a method for prod
 We will study the minimal sensor configuration needed for cooperation, optimal methods of indirect communication, and whether sensor configurations can be evolved as part of an evolutionary algorithm.
 
 \section{Problem statement}
-Our main research topic is the impact of hardware choice and configuration on the emergence of cooperation in a multi-agent system. Along those lines, we intend to investigate three important aspects of this topic:
+Our main research topic is the impact of agent morphology on the emergence of cooperation in a multi-agent system. Specifically, we intend to investigate three research questions:
 
-\begin{itemize}
+\begin{enumerate}
 \item Minimal hardware requirements sufficient for the emergence of effective cooperative behaviour
 \item Optimal level of sensor-aided stigmergy for maximising cooperative behaviour
-\item Optimal sensor configuration/morphology for maximising cooperative behaviour
-\end{itemize}
+\item Whether the addition of sensor configuration evolution results in cooperative behaviour that achieves the highest group task performance
+\end{enumerate}
 
 These three aspects will be investigated separately by the three project group members: Alexander Borysov, Mary Hsu, and Jamie Hewland respectively.
 
@@ -66,13 +66,13 @@ Rajagopalan \textit{et. al.}’s research suggested that, in a predator-prey hun
 Sensors are mechanisms that allow robots to receive feedback from their environment. The usage of sensors in the task setup is one aspect of facilitating indirect communication amongst agents. Thus, we may be able to avoid the overhead of direct communication whilst still producing acceptable results.
 
 
-\subsection{Optimal Sensor Morphology}
+\subsection{Agent Morphology Evolution}
 
-\textbf{ \textit{Does evolving both the agent controller and sensor morphology have advantages over evolving the controller alone in a cooperative coevolution task?}}
+\textbf{ \textit{Does evolving both the agent controller and sensor morphology have advantages over evolving the controller alone in a task that requires cooperative behaviour?}}
 
-Ordinarily, the evolutionary algorithm in an evolutionary robotics simulation is used to evolve the controller for the robotic agents. The agent’s sensor configuration (such as the positions of the sensors) remains fixed while the controller is adapted to the task at hand. It is possible to evolve both the controller and the sensor configuration (or morphology) concurrently. This approach may increase the search space of the evolutionary algorithm but also has the potential to find novel sensor configurations that prove advantageous to the given task.
+Ordinarily, the evolutionary algorithm in an evolutionary robotics simulation is used to evolve the controller for the robotic agents. The agent’s sensor and actuator configuration (the agent's morphology) remains fixed while the controller is adapted to the task at hand. It is possible to evolve both the controller and the sensor configuration (or morphology) concurrently. This approach may increase the search space of the evolutionary algorithm but also has the potential to find novel sensor configurations that prove advantageous to the given task.
 
-Some work has focused on this question but little research has focused on the application of concurrent controller and sensor configuration evolution to multi-agent simulations. There is significant potential for evolving sensor configurations that give rise to collective behaviour among agents as different types of sensors may be involved when cooperation occurs.
+Some work has focused on this question but little research has focused on the application of concurrent controller and sensor configuration evolution to multi-agent simulations. In particular, systems that evolve agent controllers and morphology have rarely been applied to tasks which benefit from or require cooperative behaviour. There is significant potential for evolving sensor configurations that give rise to collective behaviour among agents as different types of sensors may be involved when cooperation occurs.
 
 
 \section{Procedures and Methods}
@@ -115,7 +115,7 @@ Each test scenario will be executed a number of times. Values that will be tabul
 \item Proportion of runs that result in success
 \end{itemize}
 
-\subsection{Optimal Sensor Morphology}
+\subsection{Agent Morphology Evolution}
 
 Two cases must be tested within the shared simulation platform:
 \begin{enumerate}
@@ -155,7 +155,7 @@ There has also been research into the related fields of stigmergic coordination 
 However, little research has been done in the area of varying levels of a specific type of indirect communication embodied as hardware modules (\textit{ie.} sensors).
 
 
-\subsection{Optimal Sensor Morphology}
+\subsection{Agent Morphology Evolution}
 There are several examples of attempts by researchers to evolve robot sensor configurations as well as controllers. Some of the early attempts are: \cite{Sims94,Balakrishnan96,Lee:1996}. These attempts have either been very abstract \cite{Balakrishnan96}, or featured only one or two robots \cite{Sims94}.
 
 More recently, Buason and Ziemke have studied the evolution of robotic sensors in depth \cite{Buason:2003, Buason:2005}. All of their experiments, however, have focused on the predator-prey task or some form of competitive coevolution and not cooperative coevolution. Bongard has also studied robot morphology evolution as a means to account for more complex tasks \cite{Bongard:2009,Bongard:2010} but again his experiments did not involve cooperative coevolution or the foraging task.
@@ -178,7 +178,7 @@ A key success factor for this part of the research is that the agents succeed sa
 
 The research will have succeeded when the aims of finding the best mix of sensors to be included have been reached.
 
-\subsection{Optimal Sensor Morphology}
+\subsection{Agent Morphology Evolution}
 Ideally, the addition of sensor morphology adaptation is beneficial. If this is the case then two points can be argued:
 \begin{enumerate}
 \item An evolved sensor morphology and controller combination has been found for the collective foraging task that performs better than an existing sensor configuration paired with an evolved controller.

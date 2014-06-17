@@ -89,8 +89,8 @@ My research topic…” -> “The first research question…”
 
 ###2.2 Optimal Indirect Communication Type
 
-This section needs to be rewritten since the research has changed –
-significantly – right?
+~~This section needs to be rewritten since the research has changed –
+significantly – right?~~
 
 ###2.3 Optimal Sensor Morphology
 

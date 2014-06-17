@@ -51,18 +51,15 @@ This is an important, yet somewhat overlooked problem in the field of robotics. 
 Ordinarily, while it is common for human-written heuristics to be used as controllers for robots in multi-agent systems, it is always done with a hand-designed set of sensors that aid the creation of simple behavioural rules to control the robot\cite{Jones03}. Further reducing the array of hardware sensors available to an agent would presumably result in vastly increased difficulty of designing the agent controller due to the reduction in available information.
 However, when using evolutionary computation, this difficulty is shifted onto the computer, and one is left free to attempt the creation of simpler and simpler robots. The question then becomes: is the process of evolution sufficiently intelligent to be able to work around the limitations of a minimalistic agent design? My research topic thus aims to uncover the tradeoffs made when choosing a small number of sensors, in terms of levels of cooperation, task performance, and evolution time, with the ultimate goal of discovering the minimal viable set of sensors that leads to good emergent team behaviour.
 
-\subsection{Optimal Level of Sensor-Aided Stigmergy}
+\subsection{Optimal Complement of Sensor Sensitivity}
 
+\textbf{ textit {What is the complement of sensitivities that will maximise performance in a task requiring cooperative behaviour?}}
 
-\textbf{ textit {What is the best level of environment sensitivity to induce constructive stigmergy?}}
+My research will focus on robots with a fixed sensor morphology. The robots have a set number of sensors of different types, placed in fixed positions around the agent. Each sensor has a level of sensitivity to stimulus, which can be varied. The aim is to find the combination of sensor sensitivities that maximises performance in a task that benefits from, or requires, cooperative behaviour.
 
-In a multi-agent system, agents may communicate directly, indirectly, or not at all.\cite{Panait05}. For many tasks, direct communication has proven to be beneficial. However, the cost of direct communication, both in terms of simulation overhead and fitness cost to the agents, has been underemphasised in existing research\cite{Wagner00}.
+For many multi-agent tasks, direct communication has proven to be beneficial to task performance. However, it can incur significant cost, both in terms of computational overhead and fitness cost to the agents. These aspects of direct communication have been under-emphasised in existing research\cite{Wagner00}, and makes it attractive to explore alternative methods of coordination, such as stigmergy.
 
-For the purposes of this research, we will take "indirect communication" to mean awareness of the relative placement of other agents and objects in the environment. We will vary the range of sensory input to the agents and study its effect on emergent self-organising behaviour.
-
-Rajagopalan \textit{et. al.}’s research suggested that, in a predator-prey hunting task consisting of multiple prey agents, direct communication amongst predators was more effective that indirect communication \cite{Rajagopalan11}. However, Yong and Miikkulainen found that, in a predator-prey hunting task consisting of a single prey agent, cooperation was more efficient when using indirect communication than when using direct communication.\cite{Yong09} We may be able to extrapolate the results of their findings into a foraging task where the agents ‘pursue’ only one stationary resource at a time.
-
-Sensors are mechanisms that allow robots to receive feedback from their environment. The usage of sensors in the task setup is one aspect of facilitating indirect communication amongst agents. Thus, we may be able to avoid the overhead of direct communication whilst still producing acceptable results.
+Here, stigmergy refers to the coordination of behaviour in response to agent-affected changes in the environment. In robotics, the main mechanism for receiving environmental stimulus is the robot’s sensors - thus, the configuration of sensors in the task setup is a crucial factor in facilitating stigmergy. The type and orientation of an object in the environment both contribute to the environmental cue it emits. However, greater sensitivity to environmental cues or sensitivity to a broader range of object types may not necessarily lead to more effective stigmergic coordination. This research, therefore, aims to find a setup which avoids both unnecessary costs in facilitating sensitivity and counterproductive behaviour arising from certain configurations of sensitivity.
 
 
 \subsection{Agent Morphology Evolution}

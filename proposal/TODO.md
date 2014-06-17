@@ -29,12 +29,12 @@ This needs to be reworded to emphasize that the emergent cooperation is
 necessary for solving a foraging task, and that the multi-agent system is
 a simulated multi-robot system.
 
-“Along those lines, we intend to investigate three important aspects of
-this topic:”
+~~“Along those lines, we intend to investigate three important aspects of
+this topic:”~~
 
-Should be rephrased to something like: “Specifically, we intend to
+~~Should be rephrased to something like: “Specifically, we intend to
 investigate three research questions” – the three should then be
-enumerated 1, 2, and 3.
+enumerated 1, 2, and 3.~~
 
 “Minimal hardware requirements sufficient for the emergence of effective
 cooperative behaviour”

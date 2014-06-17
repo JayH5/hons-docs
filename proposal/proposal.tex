@@ -67,11 +67,11 @@ Sensors are mechanisms that allow robots to receive feedback from their environm
 
 \subsection{Optimal Sensor Morphology}
 
-\textbf{ \textit{Does evolving both the agent controller and sensor morphology have advantages over evolving the controller alone in a cooperative coevolution task?}}
+\textbf{ \textit{Does evolving both the agent controller and sensor morphology have advantages over evolving the controller alone in a task that requires cooperative behaviour?}}
 
-Ordinarily, the evolutionary algorithm in an evolutionary robotics simulation is used to evolve the controller for the robotic agents. The agent’s sensor configuration (such as the positions of the sensors) remains fixed while the controller is adapted to the task at hand. It is possible to evolve both the controller and the sensor configuration (or morphology) concurrently. This approach may increase the search space of the evolutionary algorithm but also has the potential to find novel sensor configurations that prove advantageous to the given task.
+Ordinarily, the evolutionary algorithm in an evolutionary robotics simulation is used to evolve the controller for the robotic agents. The agent’s sensor and actuator configuration (the agent's morphology) remains fixed while the controller is adapted to the task at hand. It is possible to evolve both the controller and the sensor configuration (or morphology) concurrently. This approach may increase the search space of the evolutionary algorithm but also has the potential to find novel sensor configurations that prove advantageous to the given task.
 
-Some work has focused on this question but little research has focused on the application of concurrent controller and sensor configuration evolution to multi-agent simulations. There is significant potential for evolving sensor configurations that give rise to collective behaviour among agents as different types of sensors may be involved when cooperation occurs.
+Some work has focused on this question but little research has focused on the application of concurrent controller and sensor configuration evolution to multi-agent simulations. In particular, systems that evolve agent controllers and morphology have rarely been applied to tasks which benefit from or require cooperative behaviour. There is significant potential for evolving sensor configurations that give rise to collective behaviour among agents as different types of sensors may be involved when cooperation occurs.
 
 
 \section{Procedures and Methods}

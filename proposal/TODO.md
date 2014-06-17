@@ -89,8 +89,8 @@ My research topic…” -> “The first research question…”
 
 ###2.2 Optimal Indirect Communication Type
 
-This section needs to be rewritten since the research has changed –
-significantly – right?
+~~This section needs to be rewritten since the research has changed –
+significantly – right?~~
 
 ###2.3 Optimal Sensor Morphology
 
@@ -189,7 +189,7 @@ These anticipated outcomes have changed – right?
 
 ###6.3
 
-Same comment as for 6.1.
+~~Same comment as for 6.1.~~
 
 ## Addendum
 Gantt chart is difficult to read…

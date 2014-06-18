@@ -141,14 +141,14 @@ Most existing literature exploring evolutionary robotics, when deciding on an ag
 My research will thus fill this overlooked gap in literature by making the hardware-related choices more explicit with relation to their effect on the agents’, and evolutionary algorithms’ performance.
 
 \subsection{Optimal Complement of Sensor Sensitivities}
-There has been extensive literature on pitting direct versus indirect communication in differing tasks. Rajagopalan \textit{et. al.}. tested predators hunting multiple prey with and without direct communication in the form of message-passing. \cite{Rajagopalan11}
 
-There has also been research into the related fields of stigmergic coordination between agents. Mataric \textit{et. al.}. encoded explicit cooperative control sequences in robots who are able to see each others’ presences. \cite{Werger99}
+There has been ample literature detailing different stigmergic setups. Mataric \textit{et. al.}. encoded explicit cooperative control sequences in robots who are able to see each others’ presences. \cite{Werger99}
 
-Blow \cite{Blow04} explored the role of sensor-aided stigmergy in a real-life installation of a cooperative foraging task. 
+Blow \cite{Blow05} implemented sensor-aided stigmergy in a real-life installation of a cooperative foraging task. The controllers for the robotic agents were evolved with an Evolutionary Algorithm. Instead of intrinsic sensors for each object in the environment, however, the agents emitted UV light and had corresponding UV sensors. The setup gave rise to primitive self-organising behaviours.
 
-However, little research has been done to test the impact of sensor sensitivity on agent performance in tasks requiring cooperation.
+Holland and Melhuish \cite{Holland99} explored the sensor setup and characteristics in robotic agents that lead to stigmergic behaviour. Agents were required to cooperate with each other in order to sort two different types of frisbees. Their research aim was to find the minimal agent and environment qualities necessary to support stigmergy. They found that a relatively simple agent and environment setup was enough to produce stigmergic coordination and satisfactory performance on the task.
 
+However, little research has been done to test how sensor specificity and sensitivity impacts stigmergic behaviour in the cooperative foraging task. Furthermore, in contrast to Holland and Melhuish's work, this research only explroes the sensor sensitivities necessary to support stigmergy.
 
 \subsection{Agent Morphology Evolution}
 There are several examples of attempts by researchers to evolve robot sensor configurations as well as controllers. Some of the early attempts are: \cite{Sims94,Balakrishnan96,Lee:1996}. These attempts have either been very abstract \cite{Balakrishnan96}, or featured only one or two robots \cite{Sims94}.

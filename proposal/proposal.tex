@@ -157,7 +157,11 @@ However, little research has been done in the area of varying levels of a specif
 \subsection{Agent Morphology Evolution}
 There are several examples of attempts by researchers to evolve robot sensor configurations as well as controllers. Some of the early attempts are: \cite{Sims94,Balakrishnan96,Lee:1996}. These attempts have either been very abstract \cite{Balakrishnan96}, or featured only one or two robots \cite{Sims94}.
 
+Balakrishnan and Honavar \cite{Balakrishnan96} tested an agent in a simulated grid environment featuring a maze-solving ask. Sensors were evolved that could "sense" in the grid cells adjacent to the agent. For example, a sensor could detect obstacles directly to the right (or East) of the agent. The authors evolved a set of sensor positions that performed best at the maze-solving task.
+
 More recently, Buason and Ziemke have studied the evolution of robotic sensors in depth \cite{Buason:2003, Buason:2005}. All of their experiments, however, have focused on the predator-prey task or some form of competitive coevolution and not cooperative coevolution. Bongard has also studied robot morphology evolution as a means to account for more complex tasks \cite{Bongard:2009,Bongard:2010} but again his experiments did not involve cooperative coevolution or the foraging task.
+
+Bauson and Ziemke \cite{Buason:2003, Buason:2005} evolved agent morphology by adapting the field-of-view and direction of camera sensors on simulated agents in a predator-prey task. Agents evolved sensor configurations that were specialised to either the predator or prey roles.
 
 \section{Anticipated Outcomes}
 Our project as a whole has the unifying theme of cooperation versus competition in multi-agent foraging tasks. As such, we will be able to share a testing platform -- the computer simulation of the multi-agent system. This will be a common outcome to the three research aspects, even if it is somewhat secondary to the actual research outcomes.

@@ -30,14 +30,14 @@ The foraging task is one of the classical benchmark tasks for multi-agent simula
 
 Much work has been done focusing on cooperative coevolution as a method for producing agents that perform well at this task. However, we will study variable sensor-actuator configurations (morphology) of individual robots, since the impact of morphology on emergent cooperative group behaviour has received less research attention.
 
-We will study the minimal sensor configuration needed for cooperation, optimal methods of indirect communication, and whether sensor configurations can be evolved as part of an evolutionary algorithm.
+We will study the minimal sensor configuration needed for cooperation, the optimal complement of sensor sensitivities for a task requiring cooperation, and whether sensor configurations can be evolved as part of an evolutionary algorithm.
 
 \section{Problem statement}
 Our main research topic is the impact of agent morphology on the emergence of cooperation in a multi-agent system. Specifically, we intend to investigate three research questions:
 
 \begin{enumerate}
 \item Minimal morphology requirements sufficient for the evolutionary emergence of effective cooperative behaviour given the constraints of the morphology
-\item Optimal level of sensor-aided stigmergy for maximising cooperative behaviour
+\item Optimal complement of sensor sensitivities for a task requiring cooperation
 \item Whether the addition of sensor configuration evolution results in cooperative behaviour that achieves the highest group task performance
 \end{enumerate}
 
@@ -52,11 +52,11 @@ This is an important, yet somewhat overlooked problem in the field of robotics. 
 Ordinarily, while it is common for human-written heuristics to be used as controllers for robots in multi-agent systems, it is always done with a hand-designed set of sensors that aid the creation of simple behavioural rules to control the robot~\cite{Jones03}. Further reducing the array of hardware sensors available to an agent would presumably result in vastly increased difficulty of designing the agent controller due to the reduction in available information.
 However, when using evolutionary computation, this difficulty is shifted onto the computer, and one is left free to attempt the creation of simpler and simpler robots. The question then becomes: is artificial evolution an effective process for adapting controller design within the constraints of a minimalistic agent morphology? The first research topic thus aims to uncover the tradeoffs made when choosing a minimalistic morphology, in terms of levels of cooperation, task performance, and evolution time, with the ultimate goal of discovering the minimal viable set of sensors and actuators that leads to good emergent team behaviour.
 
-\subsection{Optimal Complement of Sensor Sensitivity}
+\subsection{Optimal Complement of Sensor Sensitivities}
 
-\textbf{ textit {What is the complement of sensitivities that will maximise performance in a task requiring cooperative behaviour?}}
+\textbf{ textit {What is the complement of sensor sensitivities that will maximise performance in a task requiring cooperative behaviour?}}
 
-My research will focus on robots with a fixed sensor morphology. The robots have a set number of sensors of different types, placed in fixed positions around the agent. Each sensor has a level of sensitivity to stimulus, which can be varied. The aim is to find the combination of sensor sensitivities that maximises performance in a task that benefits from, or requires, cooperative behaviour.
+My research will focus on robots with a fixed sensor morphology, whose controllers are being evolved with an Evolutionary Algorithm. The robots have a set number of sensors of different types, placed in fixed positions around the agent. Each sensor has a level of sensitivity to stimulus, which can be varied. The objective is to find the combination of sensor sensitivities that maximises performance in a task involves cooperative behaviour.
 
 For many multi-agent tasks, direct communication has proven to be beneficial to task performance. However, it can incur significant cost, both in terms of computational overhead and fitness cost to the agents. These aspects of direct communication have been under-emphasised in existing research\cite{Wagner00}, and makes it attractive to explore alternative methods of coordination, such as stigmergy.
 
@@ -87,23 +87,15 @@ This will allow us to see how increasing agent complexity affects task performan
 
 The end result of the above method, is a set of task fitness values and convergence times (how quickly the system reached a predetermined low standard deviation), for each agent configuration, for each task. These results can then be analysed to find the optimal point where the tradeoff between morphological complexity and task performance is most favourable.
 
-\subsection{Optimal Indirect Communication Type}
+\subsection{Optimal Complement of Sensor Sensitivities}
 
-The aim of this experiment is to find the optimal indirect communication setup that will maximise agent performance in tasks requiring cooperation. I will test the performance of heterogeneous and homogeneous multi-agent systems with the inclusion of different combinations of sensor types and environment configurations.
+The aim is to find the combination of sensor resolutions that maximises performance in a task that benefits from, or requires, cooperative behaviour. In order to facilitate this experiment, each class of object in the simulation environment will emit a different colour signal. The strength of an object's signal, as perceived by the agent, is a real-valued function of the proximity of that agent to the object. The sensitivity of a colour sensor defined by the signal strength required for the signal to register as input.
 
-Infrared sensors detect object distance only. Colour sensors feed into a binary activation function depending on whether or not the colour has been sensed.
+A promising sensor morphology, consisting of a number of proximity and colour sensors, will be chosen and fixed. Each possible complement of sensor sensitivities for this morphology will then be generated and tested in a multi-agent simulation setup comprising of genetically homogeneous agents.
 
-The experiment setup consists of a single team of agents whose aim is to collectively maximise the number of objects pushed back to the target region. The task will be set up to require cooperation to succeed by having large blocks that take several agents to push. The genetic composition of the agents will be identical across agents for homogeneous teams, and varied for heterogeneous teams.
+The agents are evolved using a Genetic Algorithm (GA) and modified form of Neuroevolution of Augmenting Topologies (NEAT), a well-known GA approach\cite{Stanley02}, until the overall performance of the agents converges (ie. each successive generation of agents ceases to show significant improvement over the previous generation). The NEAT algorithm will need to be modified so that the ‘minimal architecture’ includes the sensor types described in the task setup.
 
-The agents are evolved using a Genetic Algorithm (GA) and modified form of Neuroevolution of Augmenting Topologies (NEAT), a well-known GA approach\cite{Stanley02}, until performance converges.
-
-The NEAT algorithm will need to be modified so that the ‘minimal architecture’ includes the sensor types described in the task setup.
-
-The task environment is set up so that the agents are coloured red, the blocks are coloured green and the wall is coloured blue.
-
-The reward structure is kept constant. Different combinations of the above sensors for heterogeneous and homogeneous teams will be tested in tasks that require increasing levels of cooperation
-
-Each test scenario will be executed a number of times. Values that will be tabulated are:
+Each complement of sensitivities will be tested on the agents for a number of simulation runs. The performance of the agents for each run will be logged. Additionally, for each set of simulations on a complement, the following values will be tabulated:
 \begin{itemize}
 \item Best performance value
 \item Mean performance value
@@ -111,6 +103,8 @@ Each test scenario will be executed a number of times. Values that will be tabul
 \item Average number of iterations required for desired solution
 \item Proportion of runs that result in success
 \end{itemize}
+
+The set of all results over all the tested complements will then be subjected to statistical analysis in order to determine the best-performing complement.
 
 \subsection{Agent Morphology Evolution}
 
@@ -146,12 +140,14 @@ Most existing literature exploring evolutionary robotics, when deciding on an ag
 
 My research will thus fill this overlooked gap in literature by making the hardware-related choices more explicit with relation to their effect on the agents’, and evolutionary algorithms’ performance.
 
-\subsection{Optimal Indirect Communication Type}
+\subsection{Optimal Complement of Sensor Sensitivities}
 There has been extensive literature on pitting direct versus indirect communication in differing tasks. Rajagopalan \textit{et. al.}. tested predators hunting multiple prey with and without direct communication in the form of message-passing. \cite{Rajagopalan11}
 
 There has also been research into the related fields of stigmergic coordination between agents. Mataric \textit{et. al.}. encoded explicit cooperative control sequences in robots who are able to see each others’ presences. \cite{Werger99}
 
-However, little research has been done in the area of varying levels of a specific type of indirect communication embodied as hardware modules (\textit{ie.} sensors).
+Blow \cite{Blow04} explored the role of sensor-aided stigmergy in a real-life installation of a cooperative foraging task. 
+
+However, little research has been done to test the impact of sensor sensitivity on agent performance in tasks requiring cooperation.
 
 
 \subsection{Agent Morphology Evolution}
@@ -172,13 +168,13 @@ There is the additional possibility of comparing the results obtained using the 
 
 This research question has succeeded if an optimal morphology is found that is ahead by a significant margin; on the other hand, it has failed if the task performance scales more or less linearly with morphological agent complexity, thus giving no useful answer to the research question.
 
-\subsection{Optimal Indirect Communication Type}
-The major outcomes for this experiment are expected to be the combination of sensor types that maximise cooperative performance, as well as a table of results of the cooperative fitness of the agents. The best combination of sensors in this task environment may then be used in the other two research areas as a controlled variable. The table of results could be used to decide on which sensors to use should the optimal choice not be available.
+\subsection{Optimal Complement of Sensor Resolutions}
+The major outcome for this experiment is expected to be the combination of sensor sensitivities that maximise performance in cooperative foraging for the predetermined morphology.
 
-A key success factor for this part of the research is that the agents succeed satisfactorily at the foraging task, enough for the experiment to determine the best combinations. Failure will disprove the assumption on which this research is based - that cooperative behaviour will, in fact, arise in the task environment as it is designed.
+A key success factor for this part of the research is that the agents perform satisfactorily at the foraging task for a reasonable number of the tested complements; enough for the experiment to determine the best one. Failure of this will disprove the assumption on which this research is based - that stigmergic behaviour will, in fact, arise in the simulation as it is designed.
 
-The research will have succeeded when the aims of finding the best mix of sensors to be included have been reached.
-
+The research will have succeeded when the best complement of sensor sensitivities has been found, and there is enough evidence to support the belief that the research procedure is sound. If the experiment succeeds, investigation may move on to comparing the performance of stigmergic coordination with explicit communication in robots participating in this cooperative foraging task. Additionally, should a good morphology be discovered by the first and third research questions, the procedures and methods employed in this experiment can be re-used to test for the best sensor sensitivity settings for that morphology.
+ 
 \subsection{Agent Morphology Evolution}
 Ideally, the addition of sensor morphology adaptation is beneficial. If this is the case then two points can be argued:
 \begin{enumerate}

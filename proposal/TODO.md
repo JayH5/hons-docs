@@ -155,8 +155,8 @@ robots – so that would have to be implemented.~~
 ##5. Related Work
 
 Sections 5.1, 5.2 and 5.3 need to be expanded to include more than a
-couple of references (5.3 is ok, but needs another paragraph or two
-briefly describing other approaches) – Same goes for 5.1 and 5.2 – concise
+couple of references ~~(5.3 is ok, but needs another paragraph or two
+briefly describing other approaches)~~ – Same goes for 5.1 and 5.2 – concise
 descriptions of previous approaches are needed – in the case of 5.1, GP
 approaches for controller evolution for cooperative behaviour – in the
 case of 5.2 – approaches that test different sensor types in a multi-agent

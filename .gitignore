@@ -91,5 +91,3 @@ sympy-plots-for-*.tex/
 # Mac OS X
 .DS_Store
 
-# Don't include compiled PDF files
-*.pdf
